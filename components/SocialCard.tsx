@@ -1,5 +1,5 @@
 import React, { useRef, useState } from 'react';
-import { Twitter, Instagram, Mail, Globe, Download } from 'lucide-react';
+import { Twitter, Instagram, Mail, Youtube, Download } from 'lucide-react';
 
 export const SocialCard: React.FC = () => {
   const cardRef = useRef<HTMLDivElement>(null);
@@ -54,7 +54,7 @@ export const SocialCard: React.FC = () => {
                 </p>
               </div>
               <div className="w-16 h-16 rounded-full overflow-hidden border-2 border-[#38303f] group-hover:border-[#3f89fc] transition-colors">
-                 <img src="https://picsum.photos/200" alt="Avatar" className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" />
+                 <img src="/assets/avatar.webp" alt="Avatar" className="w-full h-full object-cover" />
               </div>
             </div>
 
@@ -70,9 +70,9 @@ export const SocialCard: React.FC = () => {
             <div className="flex justify-between items-end border-t border-[#38303f] pt-6">
                <div className="flex gap-4">
                   <a href="#" className="text-zinc-400 hover:text-white hover:scale-110 transition-transform"><Twitter size={20} /></a>
-                  <a href="#" className="text-zinc-400 hover:text-white hover:scale-110 transition-transform"><Globe size={20} /></a>
+                  <a href="#" className="text-zinc-400 hover:text-white hover:scale-110 transition-transform"><Youtube size={20} /></a>
                   <a href="#" className="text-zinc-400 hover:text-white hover:scale-110 transition-transform"><Instagram size={20} /></a>
-                  <a href="mailto:hello@jaxlocke.uk" className="text-zinc-400 hover:text-white hover:scale-110 transition-transform"><Mail size={20} /></a>
+                  <a href="mailto:jax@arasaka.ltd" className="text-zinc-400 hover:text-white hover:scale-110 transition-transform"><Mail size={20} /></a>
                </div>
                <div className="text-right">
                  <p className="text-[10px] text-zinc-600 font-mono">ID: 8492-AX</p>

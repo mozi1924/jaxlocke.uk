@@ -19,7 +19,7 @@ export const RigList: React.FC<RigListProps> = ({ rigs }) => {
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {rigs.map((rig) => (
-          <div key={rig.id} className="group relative bg-[#38303f] border border-[#201f35] hover:border-[#3f89fc]/50 transition-colors rounded-2xl overflow-hidden flex flex-col h-full shadow-lg">
+          <div key={rig.id} className="group relative bg-[#1e1d30] border border-[#201f35] hover:border-[#3f89fc]/50 transition-colors rounded-2xl overflow-hidden flex flex-col h-full shadow-lg">
             <div className="aspect-video bg-[#201f35] relative overflow-hidden">
                <img 
                  src={rig.thumbnail} 
@@ -55,7 +55,7 @@ export const RigList: React.FC<RigListProps> = ({ rigs }) => {
 
                 <a 
                   href={rig.downloadUrl}
-                  className="flex items-center justify-center gap-2 w-full bg-[#201f35] hover:bg-[#3f89fc] text-white font-bold py-3 rounded-lg transition-all duration-300 border border-[#3f89fc]/20"
+                  className="flex items-center justify-center gap-2 w-full bg-[#27263d] hover:bg-[#3f89fc] text-white font-bold py-3 rounded-lg transition-all duration-300 border border-[#3f89fc]/20"
                 >
                   <Download size={18} />
                   <span>DOWNLOAD</span>
