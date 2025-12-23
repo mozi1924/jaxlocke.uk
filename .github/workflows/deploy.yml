@@ -37,6 +37,7 @@ jobs:
         uses: cloudflare/pages-action@v1
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           projectName: jaxlocke-uk # Please verify this matches your Cloudflare Pages project name
           directory: dist
           gitHubToken: ${{ secrets.GITHUB_TOKEN }}
