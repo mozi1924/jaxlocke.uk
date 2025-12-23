@@ -110,7 +110,7 @@ function App() {
         <section id="home" className="min-h-screen flex flex-col items-center justify-center relative py-20">
            <div className="grid lg:grid-cols-2 gap-12 items-center w-full max-w-6xl">
               <div className="order-2 lg:order-1 text-center lg:text-left space-y-6">
-                 <h1 className="text-4xl md:text-7xl lg:text-9xl font-display font-bold tracking-tighter leading-none break-words">
+                 <h1 className="text-5xl md:text-7xl lg:text-9xl font-display font-bold tracking-tighter leading-none">
                     DIGITAL <br/>
                     <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#3f89fc] to-[#81b1ff]">SCULPTOR</span>
                  </h1>
