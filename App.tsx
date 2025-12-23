@@ -101,7 +101,7 @@ function App() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-stone-950 text-stone-200 selection:bg-fuchsia-500 selection:text-white">
+    <div className="min-h-screen bg-[#201f35] text-stone-200 selection:bg-[#3f89fc] selection:text-white">
       <Navigation activeSection={activeSection} scrollToSection={scrollToSection} />
 
       <main className="container mx-auto px-4 md:px-8 pb-32">
@@ -112,14 +112,14 @@ function App() {
               <div className="order-2 lg:order-1 text-center lg:text-left space-y-6">
                  <h1 className="text-5xl md:text-7xl lg:text-9xl font-display font-bold tracking-tighter leading-none">
                     DIGITAL <br/>
-                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-fuchsia-500 to-indigo-500">SCULPTOR</span>
+                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#3f89fc] to-[#81b1ff]">SCULPTOR</span>
                  </h1>
                  <p className="text-xl md:text-2xl text-zinc-400 font-light max-w-lg mx-auto lg:mx-0">
                     Bringing characters to life through precision rigging and expressive modeling.
                  </p>
                  <button 
                    onClick={() => scrollToSection('portfolio')}
-                   className="mt-8 inline-flex items-center gap-2 text-sm font-mono uppercase tracking-widest border-b border-fuchsia-500 pb-1 hover:text-fuchsia-500 transition-colors"
+                   className="mt-8 inline-flex items-center gap-2 text-sm font-mono uppercase tracking-widest border-b border-[#3f89fc] pb-1 hover:text-[#3f89fc] transition-colors"
                  >
                    View Selected Works <ArrowDown className="animate-bounce" size={16}/>
                  </button>
@@ -131,7 +131,8 @@ function App() {
            </div>
            
            {/* Background Deco */}
-           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-indigo-900/10 blur-[120px] rounded-full -z-10 pointer-events-none" />
+           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-[#3f89fc]/10 blur-[120px] rounded-full -z-10 pointer-events-none" />
+           <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-[#402424]/20 blur-[100px] rounded-full -z-10 pointer-events-none" />
         </section>
 
         {/* PORTFOLIO SECTION */}
@@ -155,14 +156,14 @@ function App() {
         </section>
 
         {/* RIGS DOWNLOAD */}
-        <section id="rigs" className="min-h-[80vh] flex flex-col justify-center border-t border-zinc-900 mt-20">
+        <section id="rigs" className="min-h-[80vh] flex flex-col justify-center border-t border-[#38303f] mt-20">
           <RigList rigs={RIGS} />
         </section>
 
       </main>
 
       {/* Footer */}
-      <footer className="border-t border-zinc-900 pt-12 pb-12 md:pb-32 text-center text-zinc-600 text-sm font-mono transition-all duration-300">
+      <footer className="border-t border-[#38303f] pt-12 pb-12 md:pb-32 text-center text-zinc-500 text-sm font-mono transition-all duration-300">
         <p>&copy; {new Date().getFullYear()} Jax Locke. All rights reserved.</p>
         <p className="mt-2">Made with React & Tailwind.</p>
       </footer>

@@ -10,7 +10,7 @@ export const RigList: React.FC<RigListProps> = ({ rigs }) => {
   return (
     <div className="py-12">
       <div className="mb-16 text-center max-w-2xl mx-auto">
-        <h2 className="text-4xl md:text-6xl font-display font-bold text-white mb-4">PUBLIC <span className="text-fuchsia-500">RIGS</span></h2>
+        <h2 className="text-4xl md:text-6xl font-display font-bold text-white mb-4">PUBLIC <span className="text-[#3f89fc]">RIGS</span></h2>
         <p className="text-zinc-400">
           Professional quality rigs for animation practice, student films, and commercial projects. 
           Tested in Maya and Blender.
@@ -19,8 +19,8 @@ export const RigList: React.FC<RigListProps> = ({ rigs }) => {
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {rigs.map((rig) => (
-          <div key={rig.id} className="group relative bg-zinc-900 border border-zinc-800 hover:border-fuchsia-500/50 transition-colors rounded-2xl overflow-hidden flex flex-col h-full">
-            <div className="aspect-video bg-zinc-800 relative overflow-hidden">
+          <div key={rig.id} className="group relative bg-[#38303f] border border-[#201f35] hover:border-[#3f89fc]/50 transition-colors rounded-2xl overflow-hidden flex flex-col h-full shadow-lg">
+            <div className="aspect-video bg-[#201f35] relative overflow-hidden">
                <img 
                  src={rig.thumbnail} 
                  alt={rig.name}
@@ -35,9 +35,9 @@ export const RigList: React.FC<RigListProps> = ({ rigs }) => {
               <div className="flex items-start justify-between mb-4">
                 <div>
                   <h3 className="text-xl font-bold text-white">{rig.name}</h3>
-                  <p className="text-xs text-fuchsia-400 font-mono mt-1">{rig.software}</p>
+                  <p className="text-xs text-[#3f89fc] font-mono mt-1">{rig.software}</p>
                 </div>
-                <Box className="text-zinc-600 group-hover:text-fuchsia-500 transition-colors" />
+                <Box className="text-zinc-600 group-hover:text-[#3f89fc] transition-colors" />
               </div>
 
               <p className="text-zinc-400 text-sm mb-6 line-clamp-3">
@@ -48,14 +48,14 @@ export const RigList: React.FC<RigListProps> = ({ rigs }) => {
                 <ul className="space-y-2 mb-6">
                   {rig.features.slice(0, 3).map((feature, idx) => (
                     <li key={idx} className="flex items-center gap-2 text-xs text-zinc-500">
-                      <Check size={12} className="text-fuchsia-500" /> {feature}
+                      <Check size={12} className="text-[#3f89fc]" /> {feature}
                     </li>
                   ))}
                 </ul>
 
                 <a 
                   href={rig.downloadUrl}
-                  className="flex items-center justify-center gap-2 w-full bg-zinc-100 hover:bg-fuchsia-500 text-zinc-900 hover:text-white font-bold py-3 rounded-lg transition-all duration-300"
+                  className="flex items-center justify-center gap-2 w-full bg-[#201f35] hover:bg-[#3f89fc] text-white font-bold py-3 rounded-lg transition-all duration-300 border border-[#3f89fc]/20"
                 >
                   <Download size={18} />
                   <span>DOWNLOAD</span>
