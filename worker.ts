@@ -4,40 +4,44 @@ export default {
     const hostname = url.hostname;
     const mainDomain = 'jaxlocke.uk';
     
-    // 需要排除的特殊情况（开发环境和Cloudflare预览环境）
+    // 调试日志：查看实时日志时非常有用
+    console.log(`[Worker] Hit: ${hostname}, Path: ${url.pathname}`);
+
+    // 需要排除的特殊情况
     const isLocalhost = hostname === 'localhost' || hostname === '127.0.0.1';
+    // 注意：如果你绑定的测试域名不以 .dev 结尾，原来的逻辑可能会误判，建议仅保留 workers.dev 判断或根据实际情况调整
     const isCloudflareDev = hostname.endsWith('.workers.dev') || 
-                           hostname.endsWith('.pages.dev') || 
-                           hostname.endsWith('.cloudflared.workers.dev');
-    
-    // 如果是开发环境或Cloudflare预览环境，不进行跳转
+                           hostname.endsWith('.pages.dev');
+
+    // 1. 开发环境直接放行
     if (isLocalhost || isCloudflareDev) {
+      console.log('[Worker] Skipping redirect (Dev environment)');
       return env.ASSETS.fetch(request);
     }
     
-    // 如果不是主域名，则重定向到主域名
+    // 2. 核心重定向逻辑：非主域名 -> 跳转主域名
     if (hostname !== mainDomain) {
-      // 构建新的URL，保留路径、查询参数和哈希
-      const redirectUrl = new URL(url);
+      const redirectUrl = new URL(url.toString()); // 克隆 URL
       redirectUrl.hostname = mainDomain;
       redirectUrl.protocol = 'https:';
       
-      // 确保端口号正确（HTTPS默认端口443）
+      // 清理端口
       if (redirectUrl.port === '80' || redirectUrl.port === '443') {
         redirectUrl.port = '';
       }
       
-      // 永久重定向（301）有利于SEO
+      console.log(`[Worker] Redirecting ${hostname} -> ${redirectUrl.toString()}`);
       return Response.redirect(redirectUrl.toString(), 301);
     }
     
-    // 主域名访问时，也要强制HTTPS
+    // 3. 强制 HTTPS (主域名)
     if (url.protocol === 'http:') {
       url.protocol = 'https:';
+      console.log(`[Worker] Enforcing HTTPS -> ${url.toString()}`);
       return Response.redirect(url.toString(), 301);
     }
     
-    // 正常处理主域名的请求
+    // 4. 正常响应
     return env.ASSETS.fetch(request);
   },
 };
