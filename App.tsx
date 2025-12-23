@@ -101,7 +101,7 @@ function App() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-[#201f35] text-stone-200 selection:bg-[#3f89fc] selection:text-white">
+    <div className="min-h-screen w-full overflow-x-hidden bg-[#201f35] text-stone-200 selection:bg-[#3f89fc] selection:text-white">
       <Navigation activeSection={activeSection} scrollToSection={scrollToSection} />
 
       <main className="container mx-auto px-4 md:px-8 pb-32">
@@ -110,7 +110,7 @@ function App() {
         <section id="home" className="min-h-screen flex flex-col items-center justify-center relative py-20">
            <div className="grid lg:grid-cols-2 gap-12 items-center w-full max-w-6xl">
               <div className="order-2 lg:order-1 text-center lg:text-left space-y-6">
-                 <h1 className="text-5xl md:text-7xl lg:text-9xl font-display font-bold tracking-tighter leading-none">
+                 <h1 className="text-4xl md:text-7xl lg:text-9xl font-display font-bold tracking-tighter leading-none break-words">
                     DIGITAL <br/>
                     <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#3f89fc] to-[#81b1ff]">SCULPTOR</span>
                  </h1>
@@ -131,8 +131,8 @@ function App() {
            </div>
            
            {/* Background Deco */}
-           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-[#3f89fc]/10 blur-[120px] rounded-full -z-10 pointer-events-none" />
-           <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-[#402424]/20 blur-[100px] rounded-full -z-10 pointer-events-none" />
+           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] max-w-none md:max-w-full bg-[#3f89fc]/10 blur-[120px] rounded-full -z-10 pointer-events-none" />
+           <div className="absolute bottom-0 right-0 w-[400px] h-[400px] max-w-none md:max-w-full bg-[#402424]/20 blur-[100px] rounded-full -z-10 pointer-events-none" />
         </section>
 
         {/* PORTFOLIO SECTION */}

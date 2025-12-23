@@ -46,14 +46,14 @@ export const SocialCard: React.FC = () => {
           <div className="relative z-20 h-full flex flex-col justify-between p-8">
             <div className="flex justify-between items-start">
               <div>
-                <h1 className="font-display text-4xl font-bold tracking-tighter text-white mb-1">
+                <h1 className="font-display text-2xl md:text-4xl font-bold tracking-tighter text-white mb-1">
                   JAX<span className="text-[#3f89fc]">LOCKE</span>
                 </h1>
-                <p className="text-zinc-400 text-sm tracking-widest uppercase border-l-2 border-[#3f89fc] pl-3">
+                <p className="text-zinc-400 text-xs md:text-sm tracking-widest uppercase border-l-2 border-[#3f89fc] pl-3">
                   3D Character Artist & Rigger
                 </p>
               </div>
-              <div className="w-16 h-16 rounded-full overflow-hidden border-2 border-[#38303f] group-hover:border-[#3f89fc] transition-colors">
+              <div className="w-12 h-12 md:w-16 md:h-16 rounded-full overflow-hidden border-2 border-[#38303f] group-hover:border-[#3f89fc] transition-colors">
                  <img src="/assets/avatar.webp" alt="Avatar" className="w-full h-full object-cover" />
               </div>
             </div>
