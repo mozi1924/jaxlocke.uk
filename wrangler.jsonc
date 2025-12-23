@@ -4,7 +4,6 @@
   "compatibility_date": "2025-12-23",
   "routes": [
     { "pattern": "jaxlocke.uk", "custom_domain": true },
-    { "pattern": "www.jaxlocke.uk", "custom_domain": true }
   ],
   "assets": {
     "directory": "./dist"
