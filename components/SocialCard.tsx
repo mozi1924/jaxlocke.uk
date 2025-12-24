@@ -60,22 +60,21 @@ export const SocialCard: React.FC = () => {
 
             <div className="space-y-4">
                <div className="flex gap-1 flex-wrap text-xs text-zinc-500 font-mono">
-                  <span className="bg-[#38303f] px-2 py-1 rounded border border-[#201f35]">MAYA</span>
                   <span className="bg-[#38303f] px-2 py-1 rounded border border-[#201f35]">BLENDER</span>
-                  <span className="bg-[#38303f] px-2 py-1 rounded border border-[#201f35]">ZBRUSH</span>
-                  <span className="bg-[#38303f] px-2 py-1 rounded border border-[#201f35]">UE5</span>
+                  <span className="bg-[#38303f] px-2 py-1 rounded border border-[#201f35]">GIMP</span>
+                  <span className="bg-[#38303f] px-2 py-1 rounded border border-[#201f35]">UNIX</span>
                </div>
             </div>
 
             <div className="flex justify-between items-end border-t border-[#38303f] pt-6">
                <div className="flex gap-4">
-                  <a href="#" className="text-zinc-400 hover:text-white hover:scale-110 transition-transform"><Twitter size={20} /></a>
-                  <a href="#" className="text-zinc-400 hover:text-white hover:scale-110 transition-transform"><Youtube size={20} /></a>
-                  <a href="#" className="text-zinc-400 hover:text-white hover:scale-110 transition-transform"><Instagram size={20} /></a>
-                  <a href="mailto:jax@arasaka.ltd" className="text-zinc-400 hover:text-white hover:scale-110 transition-transform"><Mail size={20} /></a>
+                  <a href="https://x.com/CipherJax821" className="text-zinc-400 hover:text-white hover:scale-110 transition-transform" aria-label="Twitter"><Twitter size={20} /></a>
+                  <a href="#" className="text-zinc-400 hover:text-white hover:scale-110 transition-transform" aria-label="Youtube"><Youtube size={20} /></a>
+                  <a href="#" className="text-zinc-400 hover:text-white hover:scale-110 transition-transform" aria-label="Instagram"><Instagram size={20} /></a>
+                  <a href="mailto:jax@arasaka.ltd" className="text-zinc-400 hover:text-white hover:scale-110 transition-transform" aria-label="Mail"><Mail size={20} /></a>
                </div>
                <div className="text-right">
-                 <p className="text-[10px] text-zinc-600 font-mono">ID: 8492-AX</p>
+                 <p className="text-[10px] text-zinc-600 font-mono">ID: #8787</p>
                  <p className="text-[10px] text-zinc-600 font-mono">LONDON, UK</p>
                </div>
             </div>
