@@ -1,26 +1,73 @@
 ---
 import "../styles/global.css";
 import { ClientRouter } from "astro:transitions";
+import { SEO } from "astro-seo";
 
 interface Props {
 	title: string;
+	description?: string;
+	image?: string;
 }
 
-const { title } = Astro.props;
+const {
+	title,
+	description = "Jax Locke Portfolio - Digital Sculptor & Rigger",
+	image = "/default-og.png",
+} = Astro.props;
+
+const resolvedImage = new URL(
+	image,
+	Astro.site || "https://jaxlocke.uk",
+).toString();
+const canonicalURL = new URL(
+	Astro.url.pathname,
+	Astro.site || "https://jaxlocke.uk",
+);
 ---
 
 <!doctype html>
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
-		<meta
-			name="description"
-			content="Jax Locke Portfolio - Digital Sculptor & Rigger"
-		/>
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/vite.svg" />
 		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
+
+		<SEO
+			title={title}
+			titleTemplate="%s | Jax Locke"
+			description={description}
+			canonical={canonicalURL.toString()}
+			openGraph={{
+				basic: {
+					title: title,
+					type: "website",
+					image: resolvedImage,
+					url: canonicalURL.toString(),
+				},
+				optional: {
+					description: description,
+					siteName: "Jax Locke",
+				},
+				image: {
+					alt: title,
+				},
+			}}
+			twitter={{
+				card: "summary_large_image",
+				site: "@jaxlocke", // Placeholder, maybe ask user?
+				creator: "@jaxlocke",
+				image: resolvedImage,
+				imageAlt: title,
+				title: title,
+				description: description,
+			}}
+			extend={{
+				// Add any other custom tags here if needed
+				link: [{ rel: "sitemap", href: "/sitemap-index.xml" }],
+			}}
+		/>
+
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 		<link
