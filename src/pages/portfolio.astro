@@ -1,0 +1,30 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Container from "../components/ui/Container.astro";
+import SectionHeading from "../components/ui/SectionHeading.astro";
+import { Gallery } from "../components/Gallery";
+import { Navigation } from "../components/Navigation";
+import { getCollection } from "astro:content";
+
+const portfolio = await getCollection("portfolio");
+const items = portfolio.map((item) => ({ id: item.id, ...item.data }));
+---
+
+<Layout title="Portfolio | Jax Locke">
+    <Navigation
+        activeSection="portfolio"
+        pathname={Astro.url.pathname}
+        scrollToSection={() => {}}
+        client:load
+    />
+
+    <main class="pt-32 pb-20 min-h-screen">
+        <Container>
+            <SectionHeading
+                title="PORTFOLIO"
+                subtitle="Selected commercial and personal high-end works."
+            />
+            <Gallery items={items} gridCols={3} client:load />
+        </Container>
+    </main>
+</Layout>

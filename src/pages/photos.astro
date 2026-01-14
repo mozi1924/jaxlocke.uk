@@ -1,0 +1,30 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Container from "../components/ui/Container.astro";
+import SectionHeading from "../components/ui/SectionHeading.astro";
+import { Gallery } from "../components/Gallery";
+import { Navigation } from "../components/Navigation";
+import { getCollection } from "astro:content";
+
+const photos = await getCollection("photos");
+const items = photos.map((item) => ({ id: item.id, ...item.data }));
+---
+
+<Layout title="Photos | Jax Locke">
+    <Navigation
+        activeSection="photos"
+        pathname={Astro.url.pathname}
+        scrollToSection={() => {}}
+        client:load
+    />
+
+    <main class="pt-32 pb-20 min-h-screen">
+        <Container>
+            <SectionHeading
+                title="CAPTURES"
+                subtitle="Life through a lens. Photography & mood."
+            />
+            <Gallery items={items} gridCols={3} client:load />
+        </Container>
+    </main>
+</Layout>

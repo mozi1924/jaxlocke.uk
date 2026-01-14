@@ -9,28 +9,20 @@ interface RigListProps {
 export const RigList: React.FC<RigListProps> = ({ rigs }) => {
   return (
     <div className="py-12">
-      <div className="mb-16 text-center max-w-2xl mx-auto">
-        <h2 className="text-4xl md:text-6xl font-display font-bold text-white mb-4">PUBLIC <span className="text-[#3f89fc]">RIGS</span></h2>
-        <p className="text-zinc-400">
-          Professional quality rigs for animation practice, student films, and commercial projects. 
-          Tested in Maya and Blender.
-        </p>
-      </div>
-
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {rigs.map((rig) => (
           <div key={rig.id} className="group relative bg-[#1e1d30] border border-[#201f35] hover:border-[#3f89fc]/50 transition-colors rounded-2xl overflow-hidden flex flex-col h-full shadow-lg">
             <div className="aspect-video bg-[#201f35] relative overflow-hidden">
-               <img 
-                 src={rig.thumbnail} 
-                 alt={rig.name}
-                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-               />
-               <div className="absolute top-4 right-4 bg-black/80 backdrop-blur text-white text-xs font-bold px-3 py-1 rounded-full border border-zinc-700 flex items-center gap-1">
-                 {rig.price === '0' ? 'FREE' : `$${rig.price}`}
-               </div>
+              <img
+                src={rig.thumbnail}
+                alt={rig.name}
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              />
+              <div className="absolute top-4 right-4 bg-black/80 backdrop-blur text-white text-xs font-bold px-3 py-1 rounded-full border border-zinc-700 flex items-center gap-1">
+                {rig.price === '0' ? 'FREE' : `$${rig.price}`}
+              </div>
             </div>
-            
+
             <div className="p-6 flex flex-col flex-grow">
               <div className="flex items-start justify-between mb-4">
                 <div>
@@ -53,7 +45,7 @@ export const RigList: React.FC<RigListProps> = ({ rigs }) => {
                   ))}
                 </ul>
 
-                <a 
+                <a
                   href={rig.downloadUrl}
                   className="flex items-center justify-center gap-2 w-full bg-[#27263d] hover:bg-[#3f89fc] text-white font-bold py-3 rounded-lg transition-all duration-300 border border-[#3f89fc]/20"
                 >

@@ -1,0 +1,74 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Container from "../components/ui/Container.astro";
+import Button from "../components/ui/Button.astro";
+import { SocialCard } from "../components/SocialCard";
+import { Navigation } from "../components/Navigation";
+import { ArrowRight } from "lucide-react";
+---
+
+<Layout title="Jax Locke | 3D Artist">
+	{
+		/* Pass 'home' as active section, or better yet, refactor Navigation to handle URL matching */
+	}
+	<Navigation
+		activeSection="home"
+		pathname={Astro.url.pathname}
+		scrollToSection={() => {}}
+		client:load
+	/>
+
+	<main class="min-h-screen relative flex items-center">
+		<Container>
+			<div class="grid lg:grid-cols-2 gap-12 items-center w-full">
+				<div
+					class="order-2 lg:order-1 text-center lg:text-left space-y-6"
+				>
+					<h1
+						class="text-5xl md:text-7xl lg:text-9xl font-display font-bold tracking-tighter leading-none"
+						transition:name="hero-title"
+					>
+						DIGITAL <br />
+						<span
+							class="text-transparent bg-clip-text bg-gradient-to-r from-[#3f89fc] to-[#81b1ff]"
+							>SCULPTOR</span
+						>
+					</h1>
+					<p
+						class="text-xl md:text-2xl text-zinc-400 font-light max-w-lg mx-auto lg:mx-0"
+					>
+						Bringing characters to life through precision rigging
+						and expressive modeling.
+					</p>
+					<div
+						class="flex flex-wrap gap-4 justify-center lg:justify-start mt-8"
+					>
+						<Button href="/portfolio" variant="primary">
+							View Portfolio <ArrowRight size={16} />
+						</Button>
+						<Button href="/rigs" variant="outline">
+							Download Rigs
+						</Button>
+					</div>
+				</div>
+
+				<div
+					class="order-1 lg:order-2 flex justify-center"
+					transition:name="hero-social"
+				>
+					<SocialCard client:visible />
+				</div>
+			</div>
+		</Container>
+
+		{/* Background Deco */}
+		<div
+			class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] max-w-none md:max-w-full bg-[#3f89fc]/10 blur-[120px] rounded-full -z-10 pointer-events-none"
+		>
+		</div>
+		<div
+			class="absolute bottom-0 right-0 w-[400px] h-[400px] max-w-none md:max-w-full bg-[#402424]/20 blur-[100px] rounded-full -z-10 pointer-events-none"
+		>
+		</div>
+	</main>
+</Layout>
